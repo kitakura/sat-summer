@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>60-Day SAT Study Plan · Jun 1 – Jul 30, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --p1: #1a5fa8; --p1-bg: #e8f2fc; --p1-mid: #5094cc;
+    --p2: #2d6a1f; --p2-bg: #e8f5e0; --p2-mid: #5aaa3a;
+    --p3: #8a4a00; --p3-bg: #fdf0dc; --p3-mid: #d4830a;
+    --p4: #4a2fa0; --p4-bg: #eeecfd; --p4-mid: #7c6ee0;
+    --test: #b02020; --test-bg: #fdeaea;
+    --ink: #1a1a18; --ink2: #4a4a46; --ink3: #8a8a84;
+    --rule: #deded8; --surface: #f8f8f4; --white: #ffffff;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 15px; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--white); line-height: 1.6; }
+
+  @media print {
+    body { font-size: 11px; }
+    .no-print { display: none !important; }
+    .page-break { page-break-before: always; }
+    .day-grid { break-inside: avoid; }
+    h2 { page-break-after: avoid; }
+  }
+
+  .print-btn {
+    position: fixed; bottom: 28px; right: 28px; z-index: 100;
+    background: var(--ink); color: var(--white);
+    border: none; border-radius: 50px; padding: 12px 24px;
+    font-family: var(--sans); font-size: 13px; font-weight: 500;
+    cursor: pointer; letter-spacing: 0.02em;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .print-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(0,0,0,0.22); }
+
+  .page { max-width: 900px; margin: 0 auto; padding: 52px 40px; }
+
+  /* COVER */
+  .cover { border-bottom: 1px solid var(--rule); margin-bottom: 48px; padding-bottom: 40px; }
+  .cover-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink3); margin-bottom: 12px; }
+  .cover-title { font-family: var(--serif); font-size: clamp(32px, 5vw, 52px); line-height: 1.1; color: var(--ink); margin-bottom: 10px; }
+  .cover-title em { font-style: italic; color: var(--p1); }
+  .cover-sub { font-size: 14px; color: var(--ink3); margin-bottom: 32px; }
+  .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+  .stat { background: var(--white); padding: 18px 16px; text-align: center; }
+  .stat-n { font-family: var(--serif); font-size: 28px; color: var(--ink); line-height: 1; margin-bottom: 4px; }
+  .stat-l { font-size: 11px; color: var(--ink3); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
+
+  /* SECTIONS */
+  .section { margin-bottom: 44px; }
+  h2 { font-family: var(--serif); font-size: 22px; color: var(--ink); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  h2::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+  /* PHASE CARDS */
+  .phases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .phase-card { border-radius: 10px; padding: 18px 20px; }
+  .phase-card.p1 { background: var(--p1-bg); }
+  .phase-card.p2 { background: var(--p2-bg); }
+  .phase-card.p3 { background: var(--p3-bg); }
+  .phase-card.p4 { background: var(--p4-bg); }
+  .phase-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+  .p1 .phase-tag { color: var(--p1); }
+  .p2 .phase-tag { color: var(--p2); }
+  .p3 .phase-tag { color: var(--p3); }
+  .p4 .phase-tag { color: var(--p4); }
+  .phase-dates { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .phase-desc { font-size: 12.5px; color: var(--ink2); line-height: 1.55; }
+
+  /* SCHEDULE TABLE */
+  .sched-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .sched-table th { background: var(--ink); color: var(--white); font-weight: 500; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; padding: 10px 14px; text-align: left; }
+  .sched-table td { padding: 10px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  .sched-table tr:nth-child(even) td { background: var(--surface); }
+  .sched-table .day-type { font-weight: 600; color: var(--ink); white-space: nowrap; }
+  .sched-table .time-col { color: var(--ink3); white-space: nowrap; font-size: 12px; }
+
+  /* TIPS */
+  .tip-box { background: var(--p4-bg); border-left: 3px solid var(--p4-mid); border-radius: 0 8px 8px 0; padding: 16px 20px; }
+  .tip-box ol { padding-left: 18px; }
+  .tip-box li { font-size: 13px; color: var(--ink2); margin-bottom: 8px; line-height: 1.55; }
+  .tip-box li:last-child { margin-bottom: 0; }
+  .tip-box li strong { color: var(--ink); }
+
+  /* DAY GRID */
+  .month-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); margin-bottom: 8px; margin-top: 20px; }
+  .dow-row { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 4px; }
+  .dow-row span { font-size: 10px; color: var(--ink3); text-align: center; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 4px; }
+  .cal-cell { border-radius: 7px; padding: 7px 8px; min-height: 72px; font-size: 10px; line-height: 1.4; cursor: default; border: 1px solid transparent; }
+  .cal-cell.empty { background: transparent; border-color: transparent; min-height: 72px; }
+  .cal-cell.p1 { background: var(--p1-bg); border-color: #c2d9f0; }
+  .cal-cell.p2 { background: var(--p2-bg); border-color: #b8dfa0; }
+  .cal-cell.p3 { background: var(--p3-bg); border-color: #f0d090; }
+  .cal-cell.p4 { background: var(--p4-bg); border-color: #ccc8f8; }
+  .cal-cell.test { border-color: var(--test) !important; border-width: 1.5px; }
+  .cell-num { font-weight: 600; font-size: 9px; margin-bottom: 1px; }
+  .cell-date { font-size: 8.5px; margin-bottom: 3px; }
+  .cell-label { font-size: 9px; line-height: 1.35; }
+  .cell-badge { display: inline-block; font-size: 7.5px; font-weight: 600; background: var(--test-bg); color: var(--test); border-radius: 3px; padding: 1px 4px; margin-top: 2px; }
+  .p1 .cell-num, .p1 .cell-date { color: var(--p1); }
+  .p1 .cell-label { color: #1e4f8c; }
+  .p2 .cell-num, .p2 .cell-date { color: var(--p2); }
+  .p2 .cell-label { color: #245518; }
+  .p3 .cell-num, .p3 .cell-date { color: var(--p3); }
+  .p3 .cell-label { color: #7a3f00; }
+  .p4 .cell-num, .p4 .cell-date { color: var(--p4); }
+  .p4 .cell-label { color: #3d2690; }
+  .test .cell-num, .test .cell-date { color: var(--test) !important; }
+
+  /* TOPIC TABLES */
+  .topic-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .topic-table th { font-weight: 600; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; padding: 9px 14px; text-align: left; color: var(--white); }
+  .topic-table td { padding: 10px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; color: var(--ink2); }
+  .topic-table tr:last-child td { border-bottom: none; }
+  .topic-table .domain { font-weight: 600; color: var(--ink); }
+  .topic-table .phase-pill { display: inline-block; font-size: 10px; font-weight: 600; border-radius: 20px; padding: 2px 9px; white-space: nowrap; }
+  .rw-th { background: var(--p1); }
+  .math-th { background: var(--p2); }
+  .rw-row:nth-child(odd) td { background: var(--p1-bg); }
+  .math-row:nth-child(odd) td { background: var(--p2-bg); }
+
+  /* TEST DATES */
+  .test-dates { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .test-card { border: 1.5px solid var(--test); border-radius: 10px; padding: 16px 18px; background: var(--test-bg); }
+  .test-card-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--test); margin-bottom: 5px; }
+  .test-card-date { font-family: var(--serif); font-size: 17px; color: var(--ink); margin-bottom: 6px; }
+  .test-card-desc { font-size: 12px; color: var(--ink2); line-height: 1.5; }
+
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
+  .leg { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--ink3); }
+  .leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+  .footer { border-top: 1px solid var(--rule); margin-top: 48px; padding-top: 18px; font-size: 11px; color: var(--ink3); text-align: center; }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">&#128438; Print / Save PDF</button>
+
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-eyebrow">Khan Academy Study Plan · Summer 2026</div>
+    <div class="cover-title">60-Day <em>SAT</em> Prep Plan</div>
+    <div class="cover-sub">Reading &amp; Writing &nbsp;·&nbsp; Math &nbsp;·&nbsp; June 1 – July 30, 2026</div>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-n">60</div><div class="stat-l">Days total</div></div>
+      <div class="stat"><div class="stat-n">~2h</div><div class="stat-l">Per day</div></div>
+      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Full practice tests</div></div>
+      <div class="stat"><div class="stat-n">2</div><div class="stat-l">Sections covered</div></div>
+    </div>
+  </div>
+
+  <!-- PHASES -->
+  <div class="section">
+    <h2>Phase overview</h2>
+    <div class="phases">
+      <div class="phase-card p1">
+        <div class="phase-tag">Phase 1 · Days 1–15 · Jun 1–15</div>
+        <div class="phase-dates">Foundation</div>
+        <div class="phase-desc">Core R&amp;W skills (information &amp; ideas, craft &amp; structure) and Algebra &amp; data. Diagnostic test on Day 1 to set your baseline and let Khan Academy auto-assign personalized practice.</div>
+      </div>
+      <div class="phase-card p2">
+        <div class="phase-tag">Phase 2 · Days 16–30 · Jun 16–30</div>
+        <div class="phase-dates">Deep Dive</div>
+        <div class="phase-desc">Advanced grammar, expression of ideas, Advanced Math (quadratics, polynomials, trig). Practice Test #2 on Day 28 — compare to Day 1 baseline and identify stalled domains.</div>
+      </div>
+      <div class="phase-card p3">
+        <div class="phase-tag">Phase 3 · Days 31–50 · Jul 1–20</div>
+        <div class="phase-dates">Practice &amp; Apply</div>
+        <div class="phase-desc">Full timed modules and targeted weak-area work. Two full practice tests (Days 35 &amp; 46). Goal shifts from learning to applying under timed pressure.</div>
+      </div>
+      <div class="phase-card p4">
+        <div class="phase-tag">Phase 4 · Days 51–60 · Jul 21–30</div>
+        <div class="phase-dates">Final Sprint</div>
+        <div class="phase-desc">Hardest question types only, speed drills, test strategy review, and Bluebook app practice. Day 60 is a full rest day — trust the work you have put in.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAILY SCHEDULE -->
+  <div class="section">
+    <h2>Typical weekly schedule</h2>
+    <table class="sched-table">
+      <thead><tr><th>Day</th><th>Time</th><th>Activity</th></tr></thead>
+      <tbody>
+        <tr><td class="day-type">Mon / Wed / Fri</td><td class="time-col">30 min<br>45 min<br>30 min<br>15 min</td><td>Khan Academy lesson video + skill intro<br>Practice questions for that topic (timed)<br>Review every wrong answer — understand the mistake<br>Flashcards or formula review</td></tr>
+        <tr><td class="day-type">Tue / Thu</td><td class="time-col">20 min<br>50 min<br>20 min</td><td>Warm-up: review previous flashcards/notes<br>Mixed R&amp;W + Math timed practice set<br>Error log — write what tripped you up and why</td></tr>
+        <tr><td class="day-type">Saturday (test days)</td><td class="time-col">3 hrs<br>30 min</td><td>Full official timed practice test on Khan Academy<br>Score review — note weak domains per section</td></tr>
+        <tr><td class="day-type">Sunday</td><td class="time-col">45 min</td><td>Light review only — go over the week's error log, no new topics</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TIPS -->
+  <div class="section">
+    <h2>Key tips for success</h2>
+    <div class="tip-box">
+      <ol>
+        <li><strong>Link your College Board account to Khan Academy on Day 1.</strong> This unlocks personalized practice based on your diagnostic score — the platform auto-fills your skill gaps.</li>
+        <li><strong>Keep an error log.</strong> Write down every missed question: what type it was and exactly why you got it wrong. Review it every Sunday. Most improvement comes from this, not more volume.</li>
+        <li><strong>Always practice with a timer.</strong> R&amp;W: ~71 sec/question. Math: ~95 sec/question. Pacing is a skill that needs practice from Week 1, not just before tests.</li>
+        <li><strong>In Phase 3+, shift from learning to applying.</strong> Do full timed modules under real conditions — not just individual practice questions.</li>
+        <li><strong>The SAT is adaptive.</strong> Module 2 gets harder or easier based on Module 1. Accuracy in Module 1 unlocks the harder (higher-scoring) Module 2 — prioritize it.</li>
+        <li><strong>Use the Bluebook app</strong> for at least 2 practice tests. The real SAT is digital — practice in the actual test interface, not just on paper or browser.</li>
+        <li><strong>Day 60 is a rest day.</strong> No studying. Sleep is when memory consolidates. Full rest the night before is worth more than one more practice set.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- PRACTICE TEST DATES -->
+  <div class="section">
+    <h2>Practice test dates</h2>
+    <div class="test-dates">
+      <div class="test-card">
+        <div class="test-card-tag">Day 1 · Diagnostic</div>
+        <div class="test-card-date">Sunday, June 1</div>
+        <div class="test-card-desc">Full official practice test. Sets baseline score. KA uses results to auto-assign personalized practice across all skill gaps.</div>
+      </div>
+      <div class="test-card">
+        <div class="test-card-tag">Day 28 · Practice Test #2</div>
+        <div class="test-card-date">Saturday, June 28</div>
+        <div class="test-card-desc">End of Phase 2. Compare score to Day 1 baseline. Identify stalled domains and shift study time toward them in Phase 3.</div>
+      </div>
+      <div class="test-card">
+        <div class="test-card-tag">Day 35 · Practice Test #3</div>
+        <div class="test-card-date">Sunday, July 5</div>
+        <div class="test-card-desc">Mid-Phase 3. Track progress. Update weak-area list for the remaining 25 days. Deep-review the next day.</div>
+      </div>
+      <div class="test-card">
+        <div class="test-card-tag">Day 46 · Practice Test #4</div>
+        <div class="test-card-date">Thursday, July 16</div>
+        <div class="test-card-desc">Final full test before sprint. Sets Phase 4 targets. Deep-review Day 47 — this defines your last 14 days of focus.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE BREAK FOR PRINT -->
+  <div class="page-break"></div>
+
+  <!-- DAY-BY-DAY CALENDAR -->
+  <div class="section">
+    <h2>Day-by-day calendar</h2>
+    <div class="legend">
+      <div class="leg"><div class="leg-dot" style="background:#5094cc"></div>Phase 1 · Foundation</div>
+      <div class="leg"><div class="leg-dot" style="background:#5aaa3a"></div>Phase 2 · Deep Dive</div>
+      <div class="leg"><div class="leg-dot" style="background:#d4830a"></div>Phase 3 · Practice</div>
+      <div class="leg"><div class="leg-dot" style="background:#7c6ee0"></div>Phase 4 · Sprint</div>
+      <div class="leg"><div class="leg-dot" style="background:#b02020"></div>Full practice test</div>
+    </div>
+    <div id="calendar"></div>
+  </div>
+
+  <!-- PAGE BREAK FOR PRINT -->
+  <div class="page-break"></div>
+
+  <!-- R&W TOPICS -->
+  <div class="section">
+    <h2>Reading &amp; Writing — topic reference</h2>
+    <table class="topic-table">
+      <thead><tr class="rw-th"><th style="background:var(--p1)">Domain</th><th style="background:var(--p1)">Topics covered</th><th style="background:var(--p1)">Phase</th></tr></thead>
+      <tbody>
+        <tr class="rw-row"><td class="domain">Information &amp; Ideas</td><td>Central ideas &amp; themes, Command of evidence (textual + quantitative), Inferences, Cross-text connections</td><td><span class="phase-pill" style="background:var(--p1-bg);color:var(--p1)">Phase 1</span></td></tr>
+        <tr class="rw-row"><td class="domain">Craft &amp; Structure</td><td>Words in context, Text structure &amp; purpose, Cross-text connections (advanced)</td><td><span class="phase-pill" style="background:var(--p1-bg);color:var(--p1)">Phase 1</span></td></tr>
+        <tr class="rw-row"><td class="domain">Standard English Conventions</td><td>Boundaries (punctuation), Form/structure/sense, Subject-verb agreement, Pronoun clarity &amp; case, Verb tense &amp; mood</td><td><span class="phase-pill" style="background:var(--p2-bg);color:var(--p2)">Phase 2</span></td></tr>
+        <tr class="rw-row"><td class="domain">Expression of Ideas</td><td>Rhetorical synthesis, Transitions, Notes-to-essay questions, Modifiers &amp; parallelism</td><td><span class="phase-pill" style="background:var(--p2-bg);color:var(--p2)">Phase 2</span></td></tr>
+        <tr class="rw-row"><td class="domain">Timed Module Practice</td><td>27 questions per module, 32 minutes total (~71 sec/question). Focus on Module 1 accuracy to unlock the harder, higher-scoring Module 2.</td><td><span class="phase-pill" style="background:var(--p3-bg);color:var(--p3)">Phase 3–4</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MATH TOPICS -->
+  <div class="section">
+    <h2>Math — topic reference</h2>
+    <table class="topic-table">
+      <thead><tr><th style="background:var(--p2)">Domain</th><th style="background:var(--p2)">Topics covered</th><th style="background:var(--p2)">Phase</th></tr></thead>
+      <tbody>
+        <tr class="math-row"><td class="domain">Algebra</td><td>Linear equations (1 &amp; 2 variables), Linear functions, Systems of equations, Linear inequalities</td><td><span class="phase-pill" style="background:var(--p1-bg);color:var(--p1)">Phase 1</span></td></tr>
+        <tr class="math-row"><td class="domain">Problem-Solving &amp; Data</td><td>Ratios, rates &amp; proportions, Percentages, Units &amp; measurement, Data distributions, Scatterplots &amp; two-way tables</td><td><span class="phase-pill" style="background:var(--p1-bg);color:var(--p1)">Phase 1</span></td></tr>
+        <tr class="math-row"><td class="domain">Advanced Math</td><td>Quadratic equations &amp; functions, Polynomial operations, Radical &amp; rational equations, Equivalent expressions, Nonlinear functions</td><td><span class="phase-pill" style="background:var(--p2-bg);color:var(--p2)">Phase 2</span></td></tr>
+        <tr class="math-row"><td class="domain">Geometry &amp; Trigonometry</td><td>Area &amp; volume, Lines/angles/triangles, Right triangles &amp; trig ratios, Circle equations &amp; arcs</td><td><span class="phase-pill" style="background:var(--p2-bg);color:var(--p2)">Phase 2</span></td></tr>
+        <tr class="math-row"><td class="domain">Timed Module Practice</td><td>44 questions per module, 70 minutes total (~95 sec/question). Grid-in (SPR) questions have no answer choices — show your work. No calculator on a portion of questions.</td><td><span class="phase-pill" style="background:var(--p3-bg);color:var(--p3)">Phase 3–4</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    60-Day SAT Khan Academy Plan &nbsp;·&nbsp; Jun 1 – Jul 30, 2026 &nbsp;·&nbsp; All practice tests are free official College Board tests on khanacademy.org
+  </div>
+
+</div>
+
+<script>
+const START = new Date(2026, 5, 1);
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const DOWS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+const days = [
+  {d:1,p:'p1',label:'Diagnostic test',test:true},
+  {d:2,p:'p1',label:'R&W: Central ideas'},
+  {d:3,p:'p1',label:'Math: Linear equations'},
+  {d:4,p:'p1',label:'Mixed practice'},
+  {d:5,p:'p1',label:'R&W: Command of evidence'},
+  {d:6,p:'p1',label:'Math: Systems of equations'},
+  {d:7,p:'p1',label:'Weekly review'},
+  {d:8,p:'p1',label:'R&W: Inferences'},
+  {d:9,p:'p1',label:'Math: Ratios &amp; %'},
+  {d:10,p:'p1',label:'Mixed practice'},
+  {d:11,p:'p1',label:'R&W: Words in context'},
+  {d:12,p:'p1',label:'Math: Data &amp; graphs'},
+  {d:13,p:'p1',label:'Mixed practice'},
+  {d:14,p:'p1',label:'R&W: Text structure'},
+  {d:15,p:'p1',label:'Phase 1 review'},
+  {d:16,p:'p2',label:'R&W: Punctuation'},
+  {d:17,p:'p2',label:'Math: Quadratics'},
+  {d:18,p:'p2',label:'Mixed practice'},
+  {d:19,p:'p2',label:'R&W: Grammar rules'},
+  {d:20,p:'p2',label:'Math: Polynomials'},
+  {d:21,p:'p2',label:'Mixed practice'},
+  {d:22,p:'p2',label:'R&W: Transitions'},
+  {d:23,p:'p2',label:'Math: Radical &amp; rational'},
+  {d:24,p:'p2',label:'Mixed practice'},
+  {d:25,p:'p2',label:'R&W: Modifiers'},
+  {d:26,p:'p2',label:'Math: Geometry'},
+  {d:27,p:'p2',label:'Mixed practice'},
+  {d:28,p:'p2',label:'Practice Test #2',test:true},
+  {d:29,p:'p2',label:'Math: Trig &amp; circles'},
+  {d:30,p:'p2',label:'Phase 2 review'},
+  {d:31,p:'p3',label:'R&W timed module'},
+  {d:32,p:'p3',label:'Math timed module'},
+  {d:33,p:'p3',label:'Mixed timed set'},
+  {d:34,p:'p3',label:'R&W timed + weak focus'},
+  {d:35,p:'p3',label:'Practice Test #3',test:true},
+  {d:36,p:'p3',label:'Test #3 deep review'},
+  {d:37,p:'p3',label:'Math timed module'},
+  {d:38,p:'p3',label:'Mixed timed set'},
+  {d:39,p:'p3',label:'R&W: Weakest domain'},
+  {d:40,p:'p3',label:'Math: Weakest domain'},
+  {d:41,p:'p3',label:'Mixed timed set'},
+  {d:42,p:'p3',label:'R&W timed module'},
+  {d:43,p:'p3',label:'Math timed module'},
+  {d:44,p:'p3',label:'Mixed timed set'},
+  {d:45,p:'p3',label:'R&W: 2nd weak domain'},
+  {d:46,p:'p3',label:'Practice Test #4',test:true},
+  {d:47,p:'p3',label:'Test #4 deep review'},
+  {d:48,p:'p3',label:'Math: 2nd weak domain'},
+  {d:49,p:'p3',label:'Mixed timed set'},
+  {d:50,p:'p3',label:'Phase 3 review'},
+  {d:51,p:'p4',label:'Hardest R&W types'},
+  {d:52,p:'p4',label:'Hardest Math types'},
+  {d:53,p:'p4',label:'Timed R&W module'},
+  {d:54,p:'p4',label:'Timed Math module'},
+  {d:55,p:'p4',label:'Speed drills'},
+  {d:56,p:'p4',label:'Mixed hard practice'},
+  {d:57,p:'p4',label:'Light timed sets'},
+  {d:58,p:'p4',label:'Test strategy review'},
+  {d:59,p:'p4',label:'Very light review'},
+  {d:60,p:'p4',label:'Rest day'},
+];
+
+function addDays(base, n){ const d = new Date(base); d.setDate(d.getDate()+n); return d; }
+function fmtDate(d){ return (d.getMonth()+1)+'/'+d.getDate(); }
+
+function buildCalendar(){
+  const cal = document.getElementById('calendar');
+  let curMonth = -1;
+  let grid = null;
+
+  days.forEach((sd, idx) => {
+    const date = addDays(START, idx);
+    const mo = date.getMonth();
+    const dow = date.getDay();
+
+    if(mo !== curMonth){
+      curMonth = mo;
+      const sec = document.createElement('div');
+
+      const mh = document.createElement('div');
+      mh.className = 'month-label';
+      mh.textContent = MONTHS[mo] + ' 2026';
+      sec.appendChild(mh);
+
+      const wr = document.createElement('div');
+      wr.className = 'dow-row';
+      DOWS.forEach(l => { const s = document.createElement('span'); s.textContent = l; wr.appendChild(s); });
+      sec.appendChild(wr);
+
+      grid = document.createElement('div');
+      grid.className = 'cal-grid';
+
+      const firstDow = date.getDay();
+      for(let i=0;i<firstDow;i++){
+        const e = document.createElement('div'); e.className='cal-cell empty'; grid.appendChild(e);
+      }
+      sec.appendChild(grid);
+      cal.appendChild(sec);
+    }
+
+    const cell = document.createElement('div');
+    cell.className = 'cal-cell ' + sd.p + (sd.test ? ' test' : '');
+    cell.innerHTML =
+      `<div class="cell-num">Day ${sd.d}</div>` +
+      `<div class="cell-date">${fmtDate(date)}</div>` +
+      `<div class="cell-label">${sd.label}</div>` +
+      (sd.test ? `<div class="cell-badge">Full test</div>` : '');
+    grid.appendChild(cell);
+  });
+}
+
+buildCalendar();
+</script>
+</body>
+</html>
